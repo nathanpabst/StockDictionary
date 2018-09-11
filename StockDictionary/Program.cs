@@ -19,6 +19,16 @@ namespace StockDictionary
             purchases.Add((ticker: "CAT", shares: 300, price: 56.14));
             purchases.Add((ticker: "AAPL", shares: 600, price: 942.15));
             purchases.Add((ticker: "IBM", shares: 500, price: 900.42));
+
+            Dictionary<string, int> ownersReport = new Dictionary<string, int>();
+            //ownersReport.Add("GM"), new Dictionary<string, int>
+            //{
+            //    { "name", "General Motors" },
+            //    { "value", }
+            //});
+
+            Console.ReadLine();
+
         }
     }
 }
