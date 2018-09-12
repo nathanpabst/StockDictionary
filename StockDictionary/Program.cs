@@ -20,14 +20,29 @@ namespace StockDictionary
             purchases.Add((ticker: "AAPL", shares: 600, price: 942.15));
             purchases.Add((ticker: "IBM", shares: 500, price: 900.42));
 
-            Dictionary<string, int> ownersReport = new Dictionary<string, int>();
-            //ownersReport.Add("GM"), new Dictionary<string, int>
-            //{
-            //    { "name", "General Motors" },
-            //    { "value", }
-            //});
+            Dictionary<string, double> ownersReport = new Dictionary<string, double>();
 
+            foreach (var value in purchases)
+            {
+                var listingName = stocks[value.ticker];
+
+                if (ownersReport.ContainsKey(listingName))
+                {
+                    ownersReport[listingName] = value.price * value.shares;
+                }
+                else
+                {
+                    ownersReport.Add(listingName, (value.price * value.shares));
+                }
+            }
+
+            Console.WriteLine("Stock Owner Valuation Report:");
+            foreach (var purchase in ownersReport)
+            {
+                Console.WriteLine($"{purchase.Key} : {purchase.Value}");
+            }
             Console.ReadLine();
+        
 
         }
     }
